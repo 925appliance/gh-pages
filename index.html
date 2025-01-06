@@ -11,11 +11,53 @@
             padding: 0;
             background-color: #f4f4f4;
         }
+        .top-bar {
+            background-color: #222;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .top-bar .contact-info {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .top-bar .contact-info a {
+            color: #00aced;
+            text-decoration: none;
+        }
+        .top-bar .contact-info a:hover {
+            text-decoration: underline;
+        }
+        .top-bar .call-now {
+            background-color: #ff5722;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .top-bar .call-now:hover {
+            background-color: #e64a19;
+        }
         header {
             background-color: #333;
             color: white;
             padding: 1rem 0;
             text-align: center;
+            margin-top: 3rem; /* To offset the fixed top bar */
         }
         nav {
             text-align: center;
@@ -55,16 +97,19 @@
     </style>
 </head>
 <body>
+    <div class="top-bar">
+        <div class="contact-info">
+            <span>📞 <a href="tel:9252048366">Call: 925-204-8366</a></span>
+            <span>📧 <a href="mailto:925appliance@gmail.com">Email: 925appliance@gmail.com</a></span>
+            <span>🌐 <a href="https://www.facebook.com/profile.php?id=61570871977173&mibextid=kFxxJD" target="_blank">Facebook</a></span>
+        </div>
+        <button class="call-now" onclick="window.location.href='tel:9252048366';">Call Now</button>
+    </div>
     <header>
-        <h1>Welcome to Advance Appliance LLC</h1>
+        <h1>Welcome to<br><span style="color: #ff5722; font-size: 2.5rem; font-weight: bold;">Advance Appliance LLC</span></h1>
         <p>Your trusted partner for appliance installation, repair, sales, and pick-up services in Contra Costa, California.</p>
     </header>
-    <nav>
-        <a href="#about">About Us</a>
-        <a href="#services">Services</a>
-        <a href="#used">Used Appliances</a>
-        <a href="#contact">Contact Us</a>
-    </nav>
+    
     <div class="container">
         <section id="about">
             <h2>About Us</h2>
@@ -73,36 +118,23 @@
         <section id="services">
             <h2>Our Services</h2>
             <ul>
-                <li><strong>Installation:</strong> Professional installation for all types of appliances.</li>
-                <li><strong>Repair:</strong> Fast and reliable repair services to get your appliances running smoothly.</li>
-                <li><strong>Used Appliance Sales:</strong> High-quality, affordable used appliances.</li>
-                <li><strong>Appliance Pick-Up:</strong> Convenient removal of old or unwanted appliances.</li>
+                <li><strong>Installation:</strong> Professional installation for all types of appliances. <span style="color: #ff5722; font-weight: bold; font-size: 1.1rem;">Starts at $85</span></li>
+                <li><strong>Repair:</strong> Fast and reliable repair services to get your appliances running smoothly. <span style="color: #ff5722; font-weight: bold; font-size: 1.1rem;">Service Fee $85</span></li>
+                <li><strong>Used Appliance Sales:</strong> High-quality, affordable used appliances. <span style="color: #ff5722; font-weight: bold; font-size: 1.1rem;">Make an Offer</span></li>
+                <li><strong>Appliance Pick-Up:</strong> Convenient removal of old or unwanted appliances. <span style="color: #ff5722; font-weight: bold; font-size: 1.1rem;">Let us know what you got, and see what we can do!</span></li>
             </ul>
         </section>
         <section id="used">
             <h2>Used Appliances for Sale</h2>
-            <p>Check out our selection of fully functional and affordable used appliances. For more information, visit us on <a href="https://www.facebook.com/profile.php?id=61570871977173&mibextid=kFxxJD" target="_blank">Facebook</a>!</p>
+            <p>Check out our selection of fully functional and affordable used appliances. Click below to view our inventory:</p>
+            <button style="background-color: #ff5722; color: white; padding: 0.7rem 1.5rem; border: none; border-radius: 5px; font-size: 1.2rem; cursor: pointer; font-weight: bold;" onclick="window.open('https://www.facebook.com/profile.php?id=61570871977173', '_blank');">Inventory</button>
         </section>
         <section class="map-container">
             <h2>Our Service Area</h2>
             <p>We proudly serve Contra Costa, California. Check out the map below for our coverage area:</p>
             <img src="https://uscountymaps.com/wp-content/uploads/Contra-Costa-County-Map-California.jpg" alt="Service Area Map">
         </section>
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Phone: 925-204-8366</p>
-            <p>Email: 925appliance@gmail.com</p>
-            <p>Facebook: <a href="https://www.facebook.com/profile.php?id=61570871977173&mibextid=kFxxJD" target="_blank">Visit us on Facebook</a></p>
-            <form>
-                <label for="name">Name:</label><br>
-                <input type="text" id="name" name="name" required><br><br>
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
-                <label for="message">Message:</label><br>
-                <textarea id="message" name="message" rows="4" required></textarea><br><br>
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
+        
     </div>
     <footer>
         <p>&copy; 2025 Advance Appliance LLC. All rights reserved. Serving Contra Costa, California.</p>
